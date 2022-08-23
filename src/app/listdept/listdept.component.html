@@ -1,1 +1,21 @@
-<p>listdept works!</p>
+<div class="container">
+    <h4 class="text-info">Department Listing</h4>
+    <div class="jumbotron">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Department Name</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dept of deptlist">
+                <td>{{dept.ID}}</td>
+                <td>{{dept.Name}}</td>
+                <td>{{dept.Location}}</td>
+                </tr>
+                        </tbody>
+        </table>
+    </div>
+</div>

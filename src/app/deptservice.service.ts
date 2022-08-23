@@ -1,7 +1,13 @@
 import { Injectable } from '@angular/core';
 import { IDept } from './idept';
 //http client object help get put post del methods
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+//Getting error messages from Api
+import { HttpErrorResponse } from '@angular/common/http';
+//reactive xtension for JS
+import { catchError } from 'rxjs';
+//to work on single component or updation of the single component not full page
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -10,5 +16,10 @@ import {HttpClient} from '@angular/common/http';
 export class DeptserviceService {
   //path of the api
 url='http://localhost:30263/api/dept'
-  constructor() { }
+httpOptions ={header: new HttpHeaders({'Content-type':'application/json'})}
+  
+constructor(private httpclient:HttpClient) { }
+  getDeptList():Observable<any>{
+    return this.httpclient.get<any[]>(this.url+'/ListDept')
+  }
 }
