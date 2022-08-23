@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DeptserviceService } from '../deptservice.service';
 import { IDept } from '../idept';
+
 import { Router } from '@angular/router';
+
 //After adding record we want to automatically go to list after clicking save or add.
 @Component({
   selector: 'app-adddept',
@@ -16,7 +18,7 @@ saveDept(dept:IDept){
   this.deptservice.addDept(this.deptdata).subscribe(
     ()=>{
       alert('Record saved successfully')
-      this.router.navigate(['/list'])
+      this.router.navigate(['/list/'])
     }
   )
 }
