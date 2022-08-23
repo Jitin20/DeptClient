@@ -1,1 +1,11 @@
-<p>finddept works!</p>
+<div class="container">
+    <div class="jumbotron">
+        <h2>Details of Department{{deptdata.name}}</h2>
+        <hr>
+        <div style="background: rgba(0,212,255,1);">
+    Id:{{deptdata.id}}<br>
+    Location: {{deptdata.location}}<br><br>
+    </div>
+    </div>  
+    <a [routerLink] = "['/list/']">Take me Back</a>
+</div>

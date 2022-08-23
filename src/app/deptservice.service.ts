@@ -22,4 +22,13 @@ constructor(private httpclient:HttpClient) { }
   getDeptList():Observable<any>{
     return this.httpclient.get<any[]>(this.url+'/ListDept')
   }
+ // To get the details
+  getDept(id:number):Observable<IDept>
+  {
+    return this.httpclient.get<IDept>(this.url + '/ListDept/'+id)
+  }
+  addDept(deptdata:IDept):Observable<IDept>
+  {//data object sent to the datadept using httpoptions
+    return this.httpclient.post<IDept>(this.url+'/adddept/'+ deptdata, this.httpOptions)
+  }
 }

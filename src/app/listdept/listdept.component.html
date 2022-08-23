@@ -11,9 +11,13 @@
             </thead>
             <tbody>
                 <tr *ngFor="let dept of deptlist">
-                <td>{{dept.ID}}</td>
-                <td>{{dept.Name}}</td>
-                <td>{{dept.Location}}</td>
+                <td>{{dept.id}}</td>
+                <td>{{dept.name}}</td>
+                <td>{{dept.location}}</td>
+                <td>
+                    <a [routerLink]="['/find/',dept.id]">Details</a>&nbsp;&nbsp;&nbsp;
+                    <a [routerLink]="['/edit/',dept.id]">Edit</a>&nbsp;&nbsp;&nbsp;
+                </td>
                 </tr>
                         </tbody>
         </table>
