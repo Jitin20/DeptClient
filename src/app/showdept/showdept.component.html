@@ -1,0 +1,22 @@
+<div class="container">
+    <h4 class="text-info">Department Listing</h4>
+    <div class="jumbotron">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name of Dept</th>
+                    <th>Count of employee</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dept of deptlist">
+                <td>{{dept.name}}</td>
+                <td>{{dept.count}}</td>
+                <td>{{dept.totalSalary}}</td>
+             
+                </tr>
+                        </tbody>
+        </table>
+    </div>
+</div>

@@ -8,7 +8,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
 //to work on single component or updation of the single component not full page
 import { Observable } from 'rxjs';
-
+import { IDeptinfo } from './ideptinfo';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +34,13 @@ constructor(private httpclient:HttpClient) { }
  editDept(deptdata:IDept):Observable<IDept>
  {
   return this.httpclient.put<IDept>(this.url+"/editdept/"+deptdata.id, this.httpOptions).pipe(catchError(this.handleError))
- }
+ }  
+
+showdeptinfo():Observable<any>
+{
+  return this.httpclient.get<any[]>(this.url + "/ShowDept")
+}
+
 handleError(error:HttpErrorResponse){
   let errormessage =''
   errormessage = error.status+'\n'+error.statusText+'\n'+error.error

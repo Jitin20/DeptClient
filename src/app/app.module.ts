@@ -9,13 +9,17 @@ import { FinddeptComponent } from './finddept/finddept.component';
 import { AdddeptComponent } from './adddept/adddept.component';
 import { EditdeptComponent } from './editdept/editdept.component';
 
+import { ShowdeptComponent } from './showdept/showdept.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     ListdeptComponent,
     FinddeptComponent,
     AdddeptComponent,
-    EditdeptComponent
+    EditdeptComponent,
+
+    ShowdeptComponent
     
   ],
   imports: [

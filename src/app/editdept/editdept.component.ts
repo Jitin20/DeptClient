@@ -9,7 +9,7 @@ import { IDept } from '../idept';
   styleUrls: ['./editdept.component.css']
 })
 export class EditdeptComponent implements OnInit {
-deptdata:IDept={id:0, name:"", location:""}
+deptdata:IDept={id:0, name:'', location:''}
 id:number = 0
 
   constructor(private deptservice: DeptserviceService, private activatedroute:ActivatedRoute, private router: Router) { }
@@ -20,11 +20,12 @@ id:number = 0
     this.deptservice.getDept(this.id).subscribe((data:IDept)=>{this.deptdata=data})
   }
   saveDept(dept:IDept){
+    console.log(this.deptdata)
     this.deptdata=dept
     this.deptservice.editDept(this.deptdata).subscribe(
       ()=>{
         alert("record edited")
-        this.router.navigate(['/list/'])
+        this.router.navigate(['/list'])
       }
     )
   }
